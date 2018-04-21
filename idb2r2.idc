@@ -2,14 +2,14 @@
 
 static idb2r2_functions(seg) {
     auto ea = seg;
-    auto teststr;
+    auto automatic_name;
     while (ea != BADADDR) {
         auto function_name = GetFunctionName(ea);
         auto function_cmt = get_func_cmt(ea, 1);
         
         if (function_name != 0) {
-            teststr = sprintf("sub_%X", ea);
-            if( teststr != function_name )
+            automatic_name = sprintf("sub_%X", ea);
+            if( automatic_name != function_name )
             {
                 Message("af %s @ 0x%X\n", function_name, ea);
             }
