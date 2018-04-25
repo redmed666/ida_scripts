@@ -11,7 +11,9 @@ static idb2r2_functions(seg) {
             automatic_name = sprintf("sub_%X", ea);
             if( automatic_name != function_name )
             {
-                Message("af %s @ 0x%X\n", function_name, ea);
+                if (strstr(function_name, '@') != -1) {
+                    Message("af %s @ 0x%X\n", function_name, ea);
+                }
             }
         }
         /*
